@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" onKeyPressed="#keyPressedHandle" onKeyReleased="#keyReleasedHandle" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.karev.pendulum.Controller">
+   <children>
+      <Label fx:id="status" layoutY="369.0" prefHeight="30.0" text="Выберите порт:" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="start" layoutX="48.0" layoutY="196.0" mnemonicParsing="false" onAction="#startHandle" prefHeight="50.0" prefWidth="100.0" text="СТАРТ" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="10.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="stop" layoutX="253.0" layoutY="196.0" mnemonicParsing="false" onAction="#stopHandle" prefHeight="50.0" prefWidth="100.0" text="СТОП" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="130.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="60.0" layoutY="33.0" text="Перемещение:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="30.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="steps" layoutX="154.0" layoutY="31.0" text="50" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="30.0" />
+      <Separator layoutY="263.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Label layoutX="70.0" layoutY="43.0" text="Время, мс:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="100.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="time" layoutX="164.0" layoutY="41.0" text="100" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0" />
+      <Separator layoutY="159.0" prefWidth="200.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <ComboBox fx:id="ports" layoutX="201.0" layoutY="267.0" onAction="#portsHandle" prefWidth="150.0" AnchorPane.bottomAnchor="5.0" />
+      <Button fx:id="down" layoutX="298.0" layoutY="178.0" mnemonicParsing="false" onMousePressed="#downPressedHandle" onMouseReleased="#stopHandle" prefHeight="50.0" prefWidth="50.0" AnchorPane.bottomAnchor="60.0" AnchorPane.rightAnchor="10.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/arrow_down.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="up" layoutX="297.0" layoutY="228.0" mnemonicParsing="false" onMousePressed="#upPressedHandle" onMouseReleased="#stopHandle" prefHeight="50.0" prefWidth="50.0" AnchorPane.bottomAnchor="60.0" AnchorPane.rightAnchor="80.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/arrow_up.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ProgressBar fx:id="process" layoutX="6.0" layoutY="249.0" visible="false" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   </children>
+</AnchorPane>
